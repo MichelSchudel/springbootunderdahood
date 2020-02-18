@@ -1,5 +1,9 @@
 package springbootdemo.context;
 
+import static springbootdemo.ContextPrinter.printContext;
+
+import java.util.Arrays;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -12,6 +16,9 @@ public class ApplicationContextTest {
 
         ApplicationContext ctx = new AnnotationConfigApplicationContext(basePackage);
 
-        System.out.println(ctx.getBean(ExampleBean.class).hello());
+        printContext(ctx);
+
+        System.out.println();
+        System.out.println("helloBean says " + ctx.getBean(ExampleBean.class).hello());
     }
 }
